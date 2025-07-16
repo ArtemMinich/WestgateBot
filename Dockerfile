@@ -6,7 +6,7 @@ RUN apk add --no-cache python3 make g++ libc6-compat pkgconfig cairo-dev pango-d
 
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm install --loglevel silly
 
 COPY . .
 
