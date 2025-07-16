@@ -26,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
 bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
-
+    console.log(`user ${chatId} says: ${text}`);
     if (text === "Отомщон лі вест гейт?") {
         try {
             const data = await getDynamicMapData(TARGET_HEX);
@@ -43,7 +43,7 @@ bot.on("message", async (msg) => {
 
             let caption;
             if (colonialsCount > 0) {
-                caption = `НІ!!! Кляті колоніали захопили ${colonialsCount} наших баз${colonialsCount > 1 ? "и" : "у"}! Без твоєї допомоги ми не справимось!`;
+                caption = `НІ!!! Кляті колоніали захопили ${colonialsCount} наш${colonialsCount > 1 ? "их" : "у"} баз${colonialsCount > 1 ? "и" : "у"}! Без твоєї допомоги ми не справимось!`;
             } else {
                 caption = `Westgate наш! Завжди був, є і буде!`;
             }
