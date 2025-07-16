@@ -1,13 +1,24 @@
-FROM node:18-alpine
+FROM node:18-bookworm
 
 WORKDIR /app
 
-RUN apk add --no-cache python3 make g++ libc6-compat pkgconfig cairo-dev pango-dev giflib-dev libpng-dev pixman-dev
+# Не Alpine → стабільна збірка canvas
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libcairo2-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libgif-dev \
+    librsvg2-dev \
+    pkg-config \
+    python3 \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
 
-RUN npm install --loglevel silly
+RUN npm install --loglevel=info
 
 COPY . .
 
-CMD ["node", "bot.js"]
+CMD ["npm", "start"]
