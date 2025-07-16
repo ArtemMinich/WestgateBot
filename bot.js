@@ -1,7 +1,7 @@
 require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
 const { getDynamicMapData } = require("./foxholeService");
-const { ICONS, TEAM_COLORS } = require("./enums");
+const { ICONS } = require("./enums");
 const { drawMapWithIcons } = require("./mapDrawer");
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
