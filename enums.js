@@ -9,6 +9,7 @@ const ICONS = {
 const TEAM_COLORS = {
     WARDENS: "rgba(36, 86, 130, 0.8)",
     COLONIALS: "rgba(81, 108, 75, 0.8)",
+    NONE: "rgba(0, 0, 0, 0)",
 };
 
 module.exports = {
