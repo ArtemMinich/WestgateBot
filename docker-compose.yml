@@ -4,6 +4,7 @@ services:
     container_name: westgate-tg-bot
     restart: unless-stopped
     environment:
+      - TZ=Europe/Kyiv
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - FOXHOLE_API_BASE=${FOXHOLE_API_BASE}
       - TARGET_HEX=${TARGET_HEX}

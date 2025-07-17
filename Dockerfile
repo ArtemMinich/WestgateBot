@@ -1,5 +1,8 @@
 FROM node:18-bookworm
 
+ENV TZ=Europe/Kyiv
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 WORKDIR /app
 
 # Не Alpine → стабільна збірка canvas
