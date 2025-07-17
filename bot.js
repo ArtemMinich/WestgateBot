@@ -1,7 +1,7 @@
 require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
 const { getDynamicMapData } = require("./foxholeService");
-const { ICONS } = require("./enums");
+const { ICONS , USERS_NAMES} = require("./enums");
 const { drawMapWithIcons } = require("./mapDrawer");
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
@@ -26,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
 bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
-    console.log(`user ${chatId} says: ${text}`);
+    console.log(`${new Date().toISOString()}\t${USERS_NAMES[String(chatId).trim()] || "НЕВІДОМИЙ"}: ${text}`);
     if (text === "Отомщон лі вест гейт?") {
         try {
             const data = await getDynamicMapData(TARGET_HEX);

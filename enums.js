@@ -12,7 +12,16 @@ const TEAM_COLORS = {
     NONE: "rgba(0, 0, 0, 0)",
 };
 
+const USERS_NAMES = {
+    "805427030": "Артем",
+    "1633641734": "Міша",
+    "1939459818": "Влад",
+    "885380557 ": "Андрій",
+    "769150633": "Даня",
+}
+
 module.exports = {
     ICONS,
     TEAM_COLORS,
+    USERS_NAMES,
 };
