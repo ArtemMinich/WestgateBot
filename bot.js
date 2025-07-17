@@ -26,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
 bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
-    console.log(`${new Date().toISOString()}\t${USERS_NAMES[String(chatId).trim()] || "НЕВІДОМИЙ"}: ${text}`);
+    console.log(`${new Date().toISOString()}\t${USERS_NAMES[chatId] || "НЕВІДОМИЙ (" + chatId + ")" }: ${text}`);
     if (text === "Отомщон лі вест гейт?") {
         try {
             const data = await getDynamicMapData(TARGET_HEX);
