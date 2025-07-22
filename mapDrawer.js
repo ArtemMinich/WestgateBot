@@ -22,7 +22,7 @@ async function tintIcon(iconImage, color) {
 
 async function prepareResources() {
     if (!mapImage) {
-        mapImage = await loadImage(path.join(__dirname, "images", "MapWestgateHex.png"));
+        mapImage = await loadImage(path.join(__dirname, "images", "MapLochMorHex.png"));
     }
     if (!iconCache) {
         iconCache = {};

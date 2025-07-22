@@ -15,7 +15,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(chatId, "Задай питання яке тебе хвилює найбільше.", {
         reply_markup: {
             keyboard: [
-                ["Отомщон лі вест гейт?"]
+                ["Отомщон лі лох мор?"]
             ],
             resize_keyboard: true,
             one_time_keyboard: false,
@@ -27,7 +27,7 @@ bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
     console.log(`${new Date().toISOString()}\t${USERS_NAMES[chatId] || "НЕВІДОМИЙ (" + chatId + ")" }: ${text}`);
-    if (text === "Отомщон лі вест гейт?") {
+    if (text === "Отомщон лі лох мор?") {
         try {
             const data = await getDynamicMapData(TARGET_HEX);
             const items = data.mapItems || [];
@@ -45,7 +45,7 @@ bot.on("message", async (msg) => {
             if (colonialsCount > 0) {
                 caption = `НІ!!! Кляті колоніали захопили ${colonialsCount} наш${colonialsCount > 1 ? "их" : "у"} баз${colonialsCount > 1 ? "и" : "у"}! Без твоєї допомоги ми не справимось!`;
             } else {
-                caption = `Westgate наш! Завжди був, є і буде!`;
+                caption = `Лохмор наш! Завжди був, є і буде!`;
             }
 
             const buffer = await drawMapWithIcons(filtered);
